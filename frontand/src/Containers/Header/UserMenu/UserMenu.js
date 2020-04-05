@@ -8,9 +8,11 @@ const UserMenu = ({user, logout}) => {
         <Nav>
             <NavItem className="mr-4">
                 <span className="mr-2 ">Hello, {user.fullName}</span>
-                {user.image && user.facebookId
-                    ? <img style={avatar} src={user.image} alt={user.fullName} className="avatar-image"/>
-                    : <img style={avatar} src={apiUrl + '/uploads/' + user.image} alt={user.fullName}/>
+                {user.image ?
+                    user.facebookId
+                        ? <img style={avatar} src={user.image} alt={user.fullName} className="avatar-image"/>
+                        : <img style={avatar} src={apiUrl + '/uploads/' + user.image} alt={user.fullName}/>
+                    : null
                 }
             </NavItem>
             <NavItem>
